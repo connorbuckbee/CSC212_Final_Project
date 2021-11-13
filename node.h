@@ -13,24 +13,24 @@ class Node {
 
     public:
 
-		// Node constructor
+	    // Node constructor
 	    Node(int degree, bool leaf);
 
-		// BTree::insert helper function
-		// insert key into node that has fewer than maximum (degree) keys 
+	    // BTree::insert helper function
+	    // insert key into node that has fewer than maximum (degree) keys 
 	    void insertNonFull(std::string key);
 
-		// BTree::insert helper function
-		// split child node that has reached maximum (degree) keys
+	    // BTree::insert helper function
+	    // split child node that has reached maximum (degree) keys
 	    void splitChild(int index, Node *y); // <--- change y to something that makes sense
 	    
-		// traverse tree
-		void traverse();
+	    // traverse tree
+	    void traverse();
 
-		// search for key in tree structure
+	    // search for key in tree structure
 	    Node *search(std::string key);
 
-		// allow Node class access to BTree data members 
+	    // allow Node class access to BTree data members 
 	    friend class BTree;
 
 };
