@@ -28,7 +28,7 @@ class BTree {
 	// condition ? result1 : result2
 	// check if root is nullptr, else search for key
 	Node* search(std::string key) {
-		return (root == nullptr) ? nullptr : root->search(key); // condition ? result1 : result2
+		return (root == nullptr) ? nullptr : root->search(key);
 	}
 
 };
