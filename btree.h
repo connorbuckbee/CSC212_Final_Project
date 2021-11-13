@@ -6,30 +6,30 @@
 
 class BTree {
 	    
-        Node *root;     // pointer to root node
-	    int degree;     // minimum degree
+	Node *root;     // pointer to root node
+	int degree;     // minimum degree
 
     public:
 
-		// BTree constructor 
+	// BTree constructor 
         BTree(int degree) {
-		    root = nullptr;  
-            this->degree = degree;
-	    }
+		root = nullptr;  
+            	this->degree = degree;
+	}
 
-		// main insert function
-	    void insert(std::string key);
+	// main insert function
+	void insert(std::string key);
 	    
-		// if root is not nullptr, allow traversal		
+	// if root is not nullptr, then perform traversal		
         void traverse() {
-		    if (root != nullptr) root->traverse();
-	    }
+		if (root != nullptr) root->traverse();
+	}
 		
-		// condition ? result1 : result2
-		// check if root is nullptr, else search for key
-	    Node* search(std::string key) {
-		    return (root == nullptr) ? nullptr : root->search(key); // condition ? result1 : result2
-	    }
+	// condition ? result1 : result2
+	// check if root is nullptr, else search for key
+	Node* search(std::string key) {
+		return (root == nullptr) ? nullptr : root->search(key); // condition ? result1 : result2
+	}
 
 };
 
