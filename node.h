@@ -5,7 +5,7 @@
 
 class Node {
 	
-        std::string *keyArr;     // array of keys
+            std::string *keyArr;     // array of keys
 	    int degree;              // minimum degree
 	    Node **childArr;         // array of pointers to child nodes
 	    int numKeys;             // current number of keys
