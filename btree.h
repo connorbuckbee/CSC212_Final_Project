@@ -30,6 +30,9 @@ class BTree {
 	Node* search(std::string key) {
 		return (root == nullptr) ? nullptr : root->search(key);
 	}
+	
+	// read in text file for insertion
+        std::vector<std::string> inputArr(std::string filename);
 
 };
 
