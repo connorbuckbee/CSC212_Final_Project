@@ -11,11 +11,11 @@ void BTree::insert(std::string key) {
 		root->numKeys = 1;  // update number of keys in root Node
 	}
 
-    // tree is not empty
+        // tree is not empty
 	else { 
 
 		// if root is full, then tree grows in height
-        // "full" means max keys is reached, max keys = (m-1)
+                // "full" means max keys is reached, max keys = (m-1)
 		if (root->numKeys == 2 * degree - 1) {
 
 			// allocate memory for new root
