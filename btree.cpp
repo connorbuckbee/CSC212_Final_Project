@@ -19,8 +19,8 @@ void BTree::insert(std::string key) {
 		if (root->numKeys == 2 * degree - 1) {
 
 			// allocate memory for new root
-            // leaf-node bool set to false because we have become
-            // root or interior node
+                        // leaf-node bool set to false because we have become
+                        // root or interior node
 			Node *newRoot = new Node(degree, false);
 
 			// make old root child of new root
