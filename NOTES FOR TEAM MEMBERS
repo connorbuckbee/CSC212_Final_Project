@@ -8,23 +8,30 @@ and to list issues we are currently having.
 
 TO DO:
 
-<strike>#1. The code we currently have takes strings as input, which is part of the project requirements. I'm not sure how this is going to work in terms of 
+#1. The code we currently have takes strings as input, which is part of the project requirements. I'm not sure how this is going to work in terms of 
 comparisons, since that is how the tree structures itself. Do we need to convert strings to ASCII before making comparisons? Will we need to use 
-string:::strncmp() instead of arithmetic operators for each comparison?</strike>
+string:::strncmp() instead of arithmetic operators for each comparison?
 
+- Resolved
 
-
-
-2. Should we use a vectors instead of arrays to hold node values? The input comes from a text file, so we can read those values into a 
+#2. Should we use a vectors instead of arrays to hold node values? The input comes from a text file, so we can read those values into a 
 vector (dynamically sized) and then feed that vector into the tree. I guess arrays are fine because we know that the keyArr will always be  
 <= degree?? 
 
-3. DOT file generation. DOT files can pretty easily be put written to show what a tree looks like after it is generated, but to make that happen dynamically 
+- Started working on this but having problems. See node.cpp for details.
+
+#3. DOT file generation. DOT files can pretty easily be put written to show what a tree looks like after it is generated, but to make that happen dynamically 
 (ie. at each step of insertion/deletion/whatever) is pretty complicated and I havent found a lot of exisiting implementation of this. An example of 
 something like that here: https://nirav.com.np/2019/12/08/visualize-c-data-structures-using-graphviz-and-dot-language.html
 It would  be really cool if we were able to produce a drawing of what is happening in the tree in "real-time", but i'm not sure how we can do that yet without
 it being a very large effort.
 Any ideas?
+
+- Need someone to look into this.
+
+#4. Node key instances. Need to figure out how to count multiple instances of keys in a node. Ex: a bunch of "the"'s getting read into the tree.
+
+- Need someone to look into this.
 
 ******************************************************************************************************************
 
