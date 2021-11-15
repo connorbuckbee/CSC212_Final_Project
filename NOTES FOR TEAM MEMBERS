@@ -6,11 +6,14 @@ and to list issues we are currently having.
 
 ******************************************************************************************************************
 
-Problems I foresee us having:
+TO DO:
 
-1. The code we currently have takes strings as input, which is part of the project requirements. I'm not sure how this is going to work in terms of 
+<strike>#1. The code we currently have takes strings as input, which is part of the project requirements. I'm not sure how this is going to work in terms of 
 comparisons, since that is how the tree structures itself. Do we need to convert strings to ASCII before making comparisons? Will we need to use 
-string:::strncmp() instead of arithmetic operators for each comparison?
+string:::strncmp() instead of arithmetic operators for each comparison?</strike>
+
+
+
 
 2. Should we use a vectors instead of arrays to hold node values? The input comes from a text file, so we can read those values into a 
 vector (dynamically sized) and then feed that vector into the tree. I guess arrays are fine because we know that the keyArr will always be  
