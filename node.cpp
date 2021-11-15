@@ -4,17 +4,23 @@ Node::Node(int degree, bool leaf) {
 
 	this->degree = degree;
 	this->leaf = leaf;
-
+	
+	//*****************************************************************************
+	// 11/9:
 	// this whole block below is used if we were to use arrays for storage
 	// not needed since we are using vectors, but i dont know if we need 
 	// to replace these commands with other ones
-
-    //*****************************************************************************
+        //*****************************************************************************
+	// 11/11:
+	// something like this instead?
+	// vector<Type> *vect = new vector<Type>;
+        //*****************************************************************************
+	
 	// allocate memory for maximum number of possible keys and child pointers
-    // root has 2 minimum children, all nodes have max (degree - 1) keys
+        // root has 2 minimum children, all nodes have max (degree - 1) keys
 	//keyVec = new std::string [2 * degree - 1]; 
     
-    // root has 2 minimum children, all nodes have max (degree) children 
+        // root has 2 minimum children, all nodes have max (degree) children 
 	//childVec = new Node* [2 * degree];
 	//*****************************************************************************
 
