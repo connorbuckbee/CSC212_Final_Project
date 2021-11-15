@@ -1,37 +1,40 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include <iostream>
 #include <string>
+#include <vector>
 
 class Node {
-	
-            std::string *keyArr;     // array of keys
-	    int degree;              // minimum degree
-	    Node **childArr;         // array of pointers to child nodes
-	    int numKeys;             // current number of keys
-	    bool leaf;               // true when node is a leaf, else false
+    
+
+        int degree;                           // minimum degree
+        int numKeys;                          // current number of keys
+        bool leaf;                            // true when node is a leaf, else false
+        std::vector<std::string> keyVec;      // vector of keys
+        std::vector<Node*> childVec;          // vector of pointers to child nodes
 
     public:
 
-	    // Node constructor
-	    Node(int degree, bool leaf);
+        // Node constructor
+        Node(int degree, bool leaf);
 
-	    // BTree::insert helper function
-	    // insert key into node that has fewer than maximum (degree) keys 
-	    void insertNonFull(std::string key);
+        // BTree::insert helper function
+        // insert key into node that has fewer than maximum (degree) keys 
+        void insertNonFull(std::string key);
 
-	    // BTree::insert helper function
-	    // split child node that has reached maximum (degree) keys
-	    void splitChild(int index, Node *y); // <--- change y to something that makes sense
-	    
-	    // traverse tree
-	    void traverse();
+        // BTree::insert helper function
+        // split child node that has reached maximum (degree) keys
+        void splitChild(int index, Node *y); // <--- change y to something that makes sense
+        
+        // tree traversal
+        void traverse();
 
-	    // search for key in tree structure
-	    Node *search(std::string key);
+        // search for key in tree structure
+        Node *search(std::string key);
 
-	    // allow Node class access to BTree data members 
-	    friend class BTree;
+        // allow Node class access to BTree data members 
+        friend class BTree;
 
 };
 
