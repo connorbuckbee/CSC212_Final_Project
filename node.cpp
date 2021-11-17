@@ -5,6 +5,19 @@ Node::Node(int degree, bool leaf) {
 	this->degree = degree;
 	this->leaf = leaf;
 	
+	
+	// 11/16 - the following code solves the vector out-of-bounds error, but i think the insertion
+	// function is still broken somewhere. Any std::cout text after the BTree.insertion call
+	// disappears for some reason.
+	
+	for (int i = 0; i < (2 * degree - 1); i++) {
+		this->keyVec.push_back("key" + i);
+	}
+
+	for (int i = 0; i < (2 * degree); i++) {
+		Node* child = new Node(this->degree, this->leaf); 
+		this->childVec.push_back(child);
+	}
 	//*****************************************************************************
 	// 11/9:
 	// this whole block below is used if we were to use arrays for storage
