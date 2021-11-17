@@ -6,7 +6,19 @@ void BTree::insert(std::string key) {
 	if (root == nullptr) {
 
 		// allocate memory for root
+		
+		
+		std::cout << "Btree is empty, allocating memory for root" << st::endl;
+		// creating new Node here seems to be breaking everything, not sure why.
+		// any cout text after that new Node call gets disappeared.
+		// this makes me think the rest of the code doesnt execute 
+		// and the entire funtion is broken
+		// **************
 		root = new Node(degree, true); // Node(int degree, bool leaf);
+		// **************
+		std::cout << "Why has my text disappeared?" << st::endl;
+		
+		
 		root->keyVec.at(0) = key;  // insert key
 		root->numKeys = 1;  // update number of keys in root Node
 	}
