@@ -7,8 +7,7 @@ Node::Node(int degree, bool leaf) {
 	
 	
 	// 11/16 - the following code solves the vector out-of-bounds error, but i think the insertion
-	// function is still broken somewhere. Any std::cout text after the BTree.insertion call
-	// disappears for some reason.
+	// function is still broken somewhere. See btree.cpp for details.
 	
 	for (int i = 0; i < (2 * degree - 1); i++) {
 		this->keyVec.push_back("key" + i);
