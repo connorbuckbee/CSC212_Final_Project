@@ -7,9 +7,7 @@
 
 class Node {
     
-
         int degree;                           // minimum degree
-        int numKeys;                          // current number of keys
         bool leaf;                            // true when node is a leaf, else false
         std::vector<std::string> keyVec;      // vector of keys
         std::vector<Node*> childVec;          // vector of pointers to child nodes
@@ -20,15 +18,20 @@ class Node {
         Node(int degree, bool leaf);
 
         // BTree::insert helper function
-        // insert key into node that has fewer than maximum (degree) keys 
-        void insertNonFull(std::string key);
+        // insert key into given Node - if child is split, insert *key entry 
+        // into key vector, and newNode pointer into childVec vector of this->node 
+        void insert(std::string newKey, std::string* key, Node*& newNode);
 
         // BTree::insert helper function
-        // split child node that has reached maximum (degree) keys
-        void splitChild(int index, Node *y); // <--- change y to something that makes sense
+        // split Node that has reached maximum (degree) keys
+        void split(std::string* key, Node*& newNode);
+    
+        // BTree::insert helper function       
+        // make new root, set current root as its child
+        Node* makeNewRoot(std::string key, Node* newEntry);
         
-        // tree traversal
-        void traverse();
+        // traverse Nodes 
+        void traverse(int numNodes);
 
         // search for key in tree structure
         Node *search(std::string key);
