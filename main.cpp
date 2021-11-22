@@ -4,36 +4,35 @@
 
 int main() {
 
-    // create btree object with degree of (3)  
+    // create BTree object with degree of (3)  
+    std::cout << "Creating BTree..." << std::endl;
     BTree BTree(3);
 
     // read in text file to string vector
+    std::cout << "Reading file into vector..." << std::endl;
     std::vector<std::string> stringElems = BTree.readInString("input.txt");
 
-    // insert vector string elements into btree 
-   // for (int i = 0; i < stringElems.size(); i++) {
-        BTree.insert(stringElems.at(0));  
-    //}
 
-    
-    std::cout << stringElems.size() << std::endl;
+    // insert vector string elements into btree
+    std::cout << "Inserting keys..." << std::endl;
     for (int i = 0; i < stringElems.size(); i++) {
-        std::cout << stringElems.at(i) << std::endl;  
+        BTree.insert(stringElems.at(i));  
     }
-	
     
-   // std::cout << "Traversal of the constucted tree is ";
-	//BTree.traverse();
+    std::cout << "Insertion complete!" << std::endl;
 
-    /*
-	//std::string key = "sixty";
-	//(t.search(key) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
+    std::cout << "Traversal of the constucted tree is: " << std::endl;
+    BTree.display();
 
-	//key = "seven";
-	//(t.search(key) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
-    */
+    std::string key1 = "quick";
+	(BTree.search(key1) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
 
-	//getchar();
+    std::string key2 = "elementary";
+	(BTree.search(key2) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
+	
+    std::string key3 = "brown";
+	(BTree.search(key1) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
 
-	return 0;
+    return 0;
+
 }
