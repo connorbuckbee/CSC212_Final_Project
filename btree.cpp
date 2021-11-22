@@ -1,63 +1,31 @@
 #include "btree.h"
 
-void BTree::insert(std::string key) {
-
-	// if tree is empty (it probably is)
-	if (root == nullptr) {
-
-		// allocate memory for root
-		
-		
-		std::cout << "Btree is empty, allocating memory for root" << std::endl;
-		// creating new Node here seems to be breaking everything, not sure why.
-		// any cout text after that new Node call gets disappeared.
-		// this makes me think the rest of the code doesnt execute 
-		// and the entire funtion is broken
-		// **************
-		root = new Node(degree, true); // Node(int degree, bool leaf);
-		// **************
-		std::cout << "Why has my text disappeared?" << std::endl;
-		
-		
-		root->keyVec.at(0) = key;  // insert key
-		root->numKeys = 1;  // update number of keys in root Node
-	}
-
-        // tree is not empty
-	else { 
-
-		// if root is full, then tree grows in height
-                // "full" means max keys is reached, max keys = (m-1)
-		if (root->numKeys == 2 * degree - 1) {
-
-			// allocate memory for new root
-                        // leaf-node bool set to false because we have become
-                        // root or interior node
-			Node *newRoot = new Node(degree, false);
-
-			// make old root child of new root
-			newRoot->childVec.at(0) = root;
-
-			// split old root and move key to the new root
-			newRoot->splitChild(0, root);
-
-			// new root has two children, decide which of the
-			// two children is going to have new key
-			int i = 0;
-			if (newRoot -> keyVec.at(0) < key) 
-				i++;
-			newRoot->childVec.at(i)->insertNonFull(key);
-
-			// swap root
-			root = newRoot;
-		}
-
-		else  // root is not full, call insertNonFull on root
-			root->insertNonFull(key);
-
-	}
+// BTree constuctor, initialize with maximum (degree) child Nodes
+BTree::BTree(int degree) {
+    root = new Node(degree, true);
 }
 
+// main insertion function
+void BTree::insert(std::string newKey) {
+    
+    // make space for newNode and key
+    Node* newNode = nullptr;
+    std::string key = "";
+	
+    // insert key into BTree
+    root->insert(newKey, &key, newNode);
+ 
+    // if newNode is not nullptr, then root needs to be
+    // split - let us create new root
+    if (newNode != nullptr) {
+        root = root->makeNewRoot(key, newNode);
+    }
+}
+
+// traverse BTree starting at root Node, print as we go 
+void BTree::display() {
+    root->traverse(0);
+}
 
 std::vector<std::string> BTree::readInString(std::string filename) {
 
