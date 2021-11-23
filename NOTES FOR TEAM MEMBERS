@@ -18,7 +18,7 @@ string:::strncmp() instead of arithmetic operators for each comparison?
 vector (dynamically sized) and then feed that vector into the tree. I guess arrays are fine because we know that the keyArr will always be  
 <= degree?? 
 
-- Started working on this but having problems. See node.cpp for details.
+- Resolved 11/20
 
 #3. DOT file generation. DOT files can pretty easily be put written to show what a tree looks like after it is generated, but to make that happen dynamically 
 (ie. at each step of insertion/deletion/whatever) is pretty complicated and I havent found a lot of exisiting implementation of this. An example of 
