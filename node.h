@@ -8,9 +8,9 @@
 class Node {
     
         int degree;                           // minimum degree
-        bool leaf;                            // true when node is a leaf, else false
+        bool leaf;                            // true when Node is a leaf, else false
         std::vector<std::string> keyVec;      // vector of keys
-        std::vector<Node*> childVec;          // vector of pointers to child nodes
+        std::vector<Node*> childVec;          // vector of pointers to child Nodes
 
     public:
 
@@ -19,7 +19,7 @@ class Node {
 
         // BTree::insert helper function
         // insert key into given Node - if child is split, insert *key entry 
-        // into key vector, and newNode pointer into childVec vector of this->node 
+        // into key vector, and newNode pointer into childVec vector of this->Node 
         void insert(std::string newKey, std::string* key, Node*& newNode);
 
         // BTree::insert helper function
