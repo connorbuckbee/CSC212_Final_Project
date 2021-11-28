@@ -24,14 +24,14 @@ int main() {
     std::cout << "Traversal of the constucted tree is: " << std::endl;
     BTree.display();
 
-    std::string key1 = "Lorem";
-	(BTree.search(key1) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
+    std::string key1 = "lazy";
+	(BTree.search(key1) != nullptr) ? std::cout << "\nPresent" : std::cout << "\n Present";
 
     std::string key2 = "ipsum";
 	(BTree.search(key2) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
 	
-    std::string key3 = "nonsense";
-	(BTree.search(key1) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
+    std::string key3 = "fox";
+	(BTree.search(key1) != nullptr) ? std::cout << "\nPresent" : std::cout << "\n Present";
 
     return 0;
 
