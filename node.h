@@ -31,7 +31,7 @@ class Node {
         Node* makeNewRoot(std::string key, Node* newEntry);
         
         // traverse Nodes 
-        void traverse(int numNodes);
+        void traverse();
 
         // search for key in tree structure
         Node *search(std::string key);
