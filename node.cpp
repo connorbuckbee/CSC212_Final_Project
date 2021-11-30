@@ -26,7 +26,7 @@ void Node::insert(std::string newKey, std::string* key, Node*& newNode) {
         // no split needed
         if (newNode == nullptr) return;
 
-	// we have enoung space child Nodes    
+	// we have enough space in child Node    
         if (keyVec.size() < 2 * degree - 1) {
  
             // ...so this Node can accommodate a new key and child pointer entry
