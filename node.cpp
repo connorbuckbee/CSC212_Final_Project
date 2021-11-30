@@ -86,7 +86,6 @@ void Node::insert(std::string newKey, std::string* key, Node*& newNode) {
     }
 }
 
-// utility function to split the child of this node
 // split the current Node and store the new parent value 
 // in *key, and new child pointer in &newNode
 // called only for splitting non-leaf Nodes
@@ -105,7 +104,7 @@ void Node::split(std::string* key, Node*& newNode)
         newNode->keyVec.push_back(this->keyVec.at(i));
     }
  
-    // this node stores first (degree) entries
+    // make room in parent keyVec for new key
     this->keyVec.resize(degree);
  
     // last (degree) entries will go to newNode
@@ -113,7 +112,7 @@ void Node::split(std::string* key, Node*& newNode)
         newNode->childVec.push_back(this->childVec.at(i));
     }
  
-    // this Node stores first (degree + 1) entries
+    // make room in childVec for new child pointer
     this->childVec.resize(degree + 1);
 }
 
