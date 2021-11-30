@@ -131,7 +131,7 @@ Node* Node::makeNewRoot(std::string key, Node* newNode)
     return root;
 }
 
-// print the nodes of B-Tree
+// print the keys of B-Tree
 void Node::traverse()
 {
     int i;
