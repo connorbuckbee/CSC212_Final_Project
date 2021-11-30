@@ -25,13 +25,13 @@ int main() {
     BTree.display();
 
     std::string key1 = "lazy";
-	(BTree.search(key1) != nullptr) ? std::cout << "\nPresent" : std::cout << "\n Present";
+	(BTree.search(key1) != nullptr) ? std::cout << "\nKey found!" : std::cout << "\nKey not found!";
 
     std::string key2 = "ipsum";
-	(BTree.search(key2) != nullptr) ? std::cout << "\nPresent" : std::cout << "\nNot Present";
+	(BTree.search(key2) != nullptr) ? std::cout << "\nKey found!" : std::cout << "\nKey not found!";
 	
     std::string key3 = "fox";
-	(BTree.search(key1) != nullptr) ? std::cout << "\nPresent" : std::cout << "\n Present";
+	(BTree.search(key1) != nullptr) ? std::cout << "\nKey found!" : std::cout << "\nKey not found!";
 
     return 0;
 
