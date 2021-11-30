@@ -131,25 +131,18 @@ Node* Node::makeNewRoot(std::string key, Node* newNode)
     return root;
 }
 
-// traverse and print Nodes of BTree
+// print the nodes of B-Tree
 void Node::traverse(int numNodes)
 {
     int i;
-    std::string nodeKey;
- 
-    // print 'numNodes' number of Nodes
-    for (int j = 0; j < numNodes; j++) {
-        nodeKey += '\t';
-    }
-	
     for (i = 0; i < keyVec.size(); i++) {
-
+ 
         // if this is not a leaf, then before printing keyVec.at(i)
         // traverse the subtree rooted with childVec.at(i)
         if (leaf == false)
             childVec.at(i)->traverse(numNodes + 1);
 
-        std::cout << nodeKey << keyVec.at(i) << std::endl;
+        std::cout << " " << keyVec.at(i);
     }
  
     // recursively go to the next child Node
