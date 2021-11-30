@@ -10,6 +10,7 @@ Node::Node(int degree, bool leaf) {
 // insert a new key in given Node
 // if child of this node is split, we have to insert *key
 // into keyVec and newNode pointer into childVec
+// note: string* = pass by value, Node*& = pass by reference
 void Node::insert(std::string newKey, std::string* key, Node*& newNode) {
  
     // non-leaf Node
@@ -89,6 +90,7 @@ void Node::insert(std::string newKey, std::string* key, Node*& newNode) {
 // split the current Node and store the new parent value 
 // in *key, and new child pointer in &newNode
 // called only for splitting non-leaf Nodes
+// note: string* = pass by value, Node*& = pass by reference
 void Node::split(std::string* key, Node*& newNode)
 {
  
