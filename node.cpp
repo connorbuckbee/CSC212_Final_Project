@@ -60,7 +60,8 @@ void Node::insert(std::string newKey, std::string* key, Node*& newNode) {
         std::vector<std::string>::iterator it;
  
         // find correct position
-	// need to explain this better <~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// returns an iterator pointing to the first element in the
+	// range [first,last) which does not compare less than newKey
         it = lower_bound(keyVec.begin(), keyVec.end(), newKey);
  
         // insert in correct position
