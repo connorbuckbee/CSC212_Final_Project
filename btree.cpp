@@ -22,9 +22,9 @@ void BTree::insert(std::string newKey) {
     }
 }
 
-// traverse BTree starting at root Node, print as we go 
+// traverse BTree, print as we go 
 void BTree::display() {
-    root->traverse(0);
+    root->traverse();
 }
 
 std::vector<std::string> BTree::readInString(std::string filename) {
