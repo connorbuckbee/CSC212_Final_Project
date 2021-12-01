@@ -37,7 +37,7 @@ class Node {
         Node *search(std::string key);
     
         // check for duplicate keys in each node
-        Node *checkDupe(std::string key);
+        Node *checkDupe(Node*& newNode);
 
         // allow Node class access to BTree data members 
         friend class BTree;
