@@ -35,6 +35,9 @@ class Node {
 
         // search for key in tree structure
         Node *search(std::string key);
+    
+        // check for duplicate keys in each node
+        Node *checkDupe(std::string key);
 
         // allow Node class access to BTree data members 
         friend class BTree;
