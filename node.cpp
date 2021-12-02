@@ -180,5 +180,23 @@ Node *Node::search(std::string key) {
 }
 
 Node *Node::checkDupe(Node*& newNode) {
+	std::vector<std::string> checkVec; // second vector to copy keys from a node into so we can remove duplicate keys freely to accurately count them
+	int count = 0;
+	for (int i = 0; i < keyVec.size(); i++) {
+		checkVec[i] = newNode->keyVec.at[i]
+	}
 	
+	for (int j = 0; j < checkVec.size(); j++) {
+		std::string current = checkVec[j];
+		for (int k = 1; k <= checkVec.size; k++) {
+			if (current == checkVec[k] {
+				count = count + 1;
+			}
+			else{
+				checkVec.erase[current];
+				break;
+			}
+			
+			
+			
 }
