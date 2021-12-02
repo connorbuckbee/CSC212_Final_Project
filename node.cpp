@@ -178,3 +178,7 @@ Node *Node::search(std::string key) {
     // recursively search child Nodes
     return childVec.at(i)->search(key);
 }
+
+Node *Node::checkDupe(Node*& newNode) {
+	
+}
