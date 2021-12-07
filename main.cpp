@@ -6,7 +6,7 @@ int main() {
 
     // create BTree object with degree of (3)  
     std::cout << "Creating BTree..." << std::endl;
-    BTree BTree(3);
+    BTree BTree(4);
 
     // read in text file to string vector
     std::cout << "Reading file into vector..." << std::endl;
