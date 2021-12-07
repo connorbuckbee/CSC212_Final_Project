@@ -7,6 +7,8 @@ Ryan Ness<br />
 Andre Quiroa<br />
  
 Thanks for taking the time to look at this code! <br />
-Compile with the following command: <br />
+Pull all of the files into one directory, and compile with the following: <br />
 g++ main.cpp btree.cpp node.cpp <br />
+
+
 
